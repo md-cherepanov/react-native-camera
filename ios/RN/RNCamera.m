@@ -1100,6 +1100,8 @@ BOOL _sessionInterrupted = NO;
             self.movieFileOutput.maxRecordedFileSize = [options[@"maxFileSize"] integerValue];
         }
 
+        self.movieFileOutput.movieFragmentInterval = kCMTimeInvalid;
+
         if (options[@"fps"]) {
             AVCaptureDevice *device = [self.videoCaptureDeviceInput device];
             AVCaptureDeviceFormat *activeFormat = device.activeFormat;
